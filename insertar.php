@@ -8,9 +8,9 @@ $clave="";
 $bbdd="persona";
 
 
-$enlace = mysqli_connect($servidor, $usuario, $clave, $bbdd); 
+$conexion = mysqli_connect($servidor, $usuario, $clave, $bbdd); 
 
-if (!$enlace){
+if (!$conexion){
 	echo "Error en la conexion con el servidor";
      }
 ?>
@@ -72,7 +72,7 @@ if(isset($_POST['insertar'])){
 
 $insertardatos= "INSERT INTO tabla VALUES('$dni', '$nombre', '$edad', '$telefono')";
 
-$ejecutarinsertar= mysqli_query($enlace, $conexion);
+$ejecutarinsertar= mysqli_query($conexion, $insertardatos);
 
 mysqli_close($conexion);
 
